@@ -3,7 +3,7 @@
 
  * As atividades podem ser localizadas na aba de "releases".
 
-* Atividades feitas a partir de 08/03/2021 estarão localizadas dentro de pastas com seu respectivo nome e serão constadas como um "release" nova.
+* Para as atividades feitas a partir de 08/03/2021: estarão localizadas dentro de pastas com seu respectivo nome e serão; seerão constadas como um "release" nova; irão dispor de uma versão compactada e outra descompactada, dentro da pasta.
 
 
 
