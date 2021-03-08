@@ -1,6 +1,14 @@
-Basic info
+## Como localizar as atividades
 
-This repository will only be used for the purpose of keeping track of the
-dev mobile ios activities, by the demand of the tutor.
 
-This file is only ment to be seen by my class's tutor and the user, me.
+ * As atividades podem ser localizadas na aba de "releases".
+
+* Atividades feitas a partir de 08/03/2021 estarão localizadas dentro de pastas com seu respectivo nome e serão constadas como um "release" nova.
+
+
+
+
+
+
+
+
