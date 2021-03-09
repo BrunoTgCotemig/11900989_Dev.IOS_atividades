@@ -56,7 +56,7 @@ Resposta:
 func q_02() // DONE
 {
 var numerus:[Int] = [Int.random(in: 0...100), Int.random(in: 0...100)]
-print(numerus[0])
+print(numerus[0]); print(numerus[1])
 }
  ```
 =================
@@ -92,44 +92,6 @@ guard login == "user" && senha == "senha" else
 print("login e senha corretos")
 
 }//end
-
-
-
-
-
-
-
-func q_02()
-{
-    let login: String? = "user"
-    let senha: String? = "senha"
-
-    if let login = login {
-        if let senha = senha 
-        {
-            if login == "user" && senha == "senha"
-            {
-                print("LOGIN E SENHA INCORRETOS")
-            }else{
-                print("Dados incorretos")
-            }
-        }
-
-
-    }
-
-
-
-}
-
-q_02()
-
-
-
-
-
-
-
 ``` 
 
  
