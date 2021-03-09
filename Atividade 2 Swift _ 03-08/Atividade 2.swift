@@ -53,11 +53,11 @@ utilizando apenas uma variável)
 
 Resposta:
  ```
-func q_02() // DONE
-{
+func q_02() 
+{//start
 var numerus:[Int] = [Int.random(in: 0...100), Int.random(in: 0...100)]
 print(numerus[0]); print(numerus[1])
-}
+}//end
  ```
 =================
 
@@ -65,7 +65,7 @@ print(numerus[0]); print(numerus[1])
 
 
 =================
-Questão 3 - // FUNCIONAL: averiguar se o resultado está correto
+Questão 3 - 
     Reescreva o seguinte código utilizando o guard:
 
 Resposta:
@@ -108,13 +108,33 @@ relativa para cada.
 
 Resposta:
 ```
-fun q_04(var https_value: Int = 0)
+func q_04(https_value: Int = 0)
+{//start
+
+
+guard 200...500 ~= https_value else 
 {
-
-
-
-
+    print("Unkown error")
+    return
 }
+
+if(200..<300 ~= https_value)
+{
+    print("Operation executed successfully")
+}
+else if(200..<400 ~= https_value)
+{
+    print("Client-side error")
+
+} 
+else
+{
+    print("Server-side error")
+}
+
+}//end
+
+// q_04(https_value: 200) // Para executar
 
 
 
