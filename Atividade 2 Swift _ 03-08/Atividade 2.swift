@@ -53,7 +53,11 @@ utilizando apenas uma variável)
 
 Resposta:
  ```
-
+func q_02() // DONE
+{
+var numerus:[Int] = [Int.random(in: 0...100), Int.random(in: 0...100)]
+print(numerus[0])
+}
  ```
 =================
 
@@ -61,11 +65,72 @@ Resposta:
 
 
 =================
-Questão 3 - 
-
+Questão 3 - // FUNCIONAL: averiguar se o resultado está correto
+    Reescreva o seguinte código utilizando o guard:
 
 Resposta:
- 
+```
+func logar()
+{//start 
+let login: String? = "user"
+let senha: String? = "senha"
+
+guard login == login else 
+{
+    return
+}
+guard senha == senha else
+{
+    return
+}
+guard login == "user" && senha == "senha" else 
+{
+    print("Dados incorretos")
+    return
+}
+
+print("login e senha corretos")
+
+}//end
+
+
+
+
+
+
+
+func q_02()
+{
+    let login: String? = "user"
+    let senha: String? = "senha"
+
+    if let login = login {
+        if let senha = senha 
+        {
+            if login == "user" && senha == "senha"
+            {
+                print("LOGIN E SENHA INCORRETOS")
+            }else{
+                print("Dados incorretos")
+            }
+        }
+
+
+    }
+
+
+
+}
+
+q_02()
+
+
+
+
+
+
+
+``` 
 
  
 =================
@@ -75,10 +140,21 @@ Resposta:
 
 =================
 Questão 4 - 
-
+    Escreva um algoritmo que trate os prováveis retornos de uma chamada HTTP
+(de 200 até 500), trate o resultado de cada range e informe uma mensagem
+relativa para cada.
 
 Resposta:
 ```
+fun q_04(var https_value: Int = 0)
+{
+
+
+
+
+}
+
+
 
 
 ``` 
