@@ -24,7 +24,7 @@ Bruno Teles Galvao;
 3b1; n º 10;
 
 
-[[[    SOMENTE RESPOSTAS   ]]]
+<<[[[    SOMENTE RESPOSTAS   ]]]>>
 
 =========================================================
 */
@@ -70,20 +70,19 @@ Bruno Teles Galvao;
 
 func q_06()
 {//start
-    func ifPrimeNumber(_Number: Int) -> Bool {   if(Number % 2 == 1){return true} else {return false}   }
-
-
     var _Array:[Int] = []
 
 
     var dummy:Int = 93
     while(92...1478 ~= dummy)
     {
-        if ( ifPrimeNumber(_Number: dummy) == true ) {   _Array.append(dummy);   }   
-        dummy = dummy+1;
+        if (dummy%2==1) {   _Array.append(dummy);   }   
+        dummy += 1;
     }
 
-    for i in _Array {   print(_Array[i])   }
+    var total:Int=0
+    for i in _Array {   total += i   }
+    print(   "Soma dos numeros primos entre 92 e 1478: "+String(total)   )
 }//end
 
 
@@ -100,9 +99,9 @@ func q_07()
     var _Array:[Int] = []
     
 
-    for i in 0...9 {   _Array.append(Int.random(in: 0...10))    }
+    for i in -1...11 {   _Array.append(Int.random(in: 0...100))    }
     _Array.sort()
-    for i in _Array{   print(_Array[i])   }
+    for i in _Array{   print(i)   }
 }//end
 
 
