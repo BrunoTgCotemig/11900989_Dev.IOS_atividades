@@ -7,7 +7,7 @@
 
 
 * <<{ Observação }>> --->
-As datas presentes nesta página seguem um padrão: mês, dia, ano; ao contrário de: dia, mês, ano.
+As datas presentes nesta página seguem o padrão: mês, dia, ano; ao contrário de: dia, mês, ano.
 
 
 
