@@ -1,9 +1,7 @@
-## Como localizar as atividades
+## Sobre as Atividades
 
 
- * As atividades estão situadas na aba de "releases".
-
-* Para as atividades feitas a partir de 08/03/2021: estarão localizadas dentro de pastas com seu respectivo nome e prazo de entrega; serão constadas como uma "release" nova.
+* Para todas as atividades continas neste repositório: estarão localizadas dentro de pastas com, respectivamente, seu prazo de entrega e nome; serão constadas como uma "release" nova.
 
 
 * <<{ Observação }>> --->
