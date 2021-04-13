@@ -36,21 +36,67 @@ Observações:
 
 
 ** Todos os lugares em que uma input do usuario é necessaria,
-   foram usados comandos "Int.Random", assim como o instruido
-   para aqueles que não tem como testar o codico em um ambiente 
-   swift: remote lab, mac IOS, ect.
+   foram usados comandos "Int.Random" por padrão, assim como 
+   o instruido a aqueles que não tem como testar o codico em 
+   um ambiente swift: remote lab, mac IOS, ect.
 
 =========================================================
 */
+
+
+//           <<LINHAS DE CODICO RECORRENTES>>
 import Foundation;
 
+func get_input_random_int(_min:Int, _max:Int) -> Int {   return  Int.random(in: _min..._max)   } // So para deixar claro que é uma input ficticia.
+func get_input_user_int(question_text:String = "") -> Int // Em tese, iria receber input do usuario via o console; porem, não tive a oportunidade de testar.
+{    
+    do
+    {
+        var dummy:String? = "";
+        var dummy1:Int = 0
+        print(question_text);
+        dummy = readLine()
+        if(dummy == nil || dummy == "") {return 0} else {dummy1 = dummy as! Int; return dummy1 } 
+    }
+    catch{print("Invalid Int input");return 0}
+   
+}
+
+
+
+
+
+//
+//                 <<ATIVIDADES>>
+//
 //==========
 //Questão 01
 
-func q_01()
+//usa: <<LINHAS DE CODICO RECORRENTES>>
+
+func q_01(random_or_user: Bool = false)
 {//Start
     var Sum:Int = 0;
-    while(Sum <= 100)  {   Sum += Int.random(in: -1...101); print(   String(Sum)  )   }   
+    if(random_or_user == false) 
+    {   
+        while(Sum <= 100) 
+        {   
+            Sum += get_input_random_int(_min:-1, _max: 51); 
+            guard (Sum <= 100) else {break}
+            print(   String(Sum)  )   
+        }    
+
+    } 
+    else 
+    {   
+    while(Sum <= 100) 
+        {
+            Sum += get_input_user_int(question_text: "digite o numero"); 
+            guard (Sum <= 100) else {break}
+            print(   String(Sum)  );   
+        }   
+    }
+    
 }//End
 
 //==========
@@ -121,32 +167,56 @@ func q_02(random_max_word_count:Int = 10, random_or_user:Bool = false) // Não t
 
 
     //==========
-    //Questão 03
+    //Questão 03 --ATUAL
 
-    func q_03()
+    //usa: <<LINHAS DE CODICO RECORRENTES>>
+
+
+   func q_03(user_or_random:Bool = false)
     {
-        func get_input_random() -> Int {   return  Int.random(in: -1...51)   }
-        func get_input_user() -> Int 
-        {    
-             var dummy:String? = "";
-             var dummy1:Int = 0;
+            class student
+            {
 
-            print("Insira o numero: ");
-            dummy = readLine();
 
-            if(dummy == nil || dummy == "") {return 0} else {dummy1 = dummy as! Int; return dummy1 }    
+                var nome: String = ""; 
+                var notas:[Int] = [];
+                var MP_value: Int = 0;
+
+                func MP()
+                {
+                    do
+                    {
+                    MP_value = notas[0]*2 + notas[1]*4 + notas[2]*3 / 10;
+                    }
+                    catch
+                    {
+                        return
+                    }
+
+                }
+
+                init(name: String = "", marks: [Int] = [])
+                {
+                    nome = name; notas = marks; MP();
+                }
+            }
+
+        var list_student: [student]  = []
+
+        for i in 1..10 
+        {
+            list_student.append(   student(   marks: [get_input_random_int(_min:-1,_max:31), get_input_random_int(_min:-1,_max:31), get_input_random_int(_min:-1,_max:31)]   )   )
         }
 
-
-
-    }
-
-    //==========
-
-
+        
+    } 
 
     //==========
-    //Questão 04
+
+
+
+    //==========
+    //Questão 04 
 
 
     func q_04(max_lengh:Int = 50, user_or_random:Bool = false)
@@ -164,7 +234,6 @@ func q_02(random_max_word_count:Int = 10, random_or_user:Bool = false) // Não t
         }
 
         var value_storage: [Int] = []
-        var value_term_sum: Int = 0;
         var dummy:Int
 
 
@@ -174,8 +243,7 @@ func q_02(random_max_word_count:Int = 10, random_or_user:Bool = false) // Não t
             value_storage.append(dummy)
         }
 
-        for i in value_storage {value_term_sum += i}
-        print("Valor total: " + String(value_term_sum))
+        print(   value_storage.min()   )
 
 }//end
 
