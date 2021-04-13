@@ -28,23 +28,27 @@ Bruno Teles Galvao;
 
 
 
+<<[[    SOMENTE RESPOSTAS   ]]>>
+
+
+
 
 
 Observações:
 
-<<[[[    SOMENTE RESPOSTAS   ]]]>>
-
 
 ** Todos os lugares em que uma input do usuario é necessaria,
    foram usados comandos "Int.Random" por padrão, assim como 
-   o instruido a aqueles que não tem como testar o codico em 
-   um ambiente swift: remote lab, mac IOS, ect.
+   o que foi dito para aqueles que não tem como testar o codico em 
+   um ambiente nativo de swift: uma maquina mac IOS, remote lab, ect.
 
 =========================================================
 */
 
-
+//
 //           <<LINHAS DE CODICO RECORRENTES>>
+//
+
 import Foundation;
 
 func get_input_random_int(_min:Int, _max:Int) -> Int {   return  Int.random(in: _min..._max)   } // So para deixar claro que é uma input ficticia.
@@ -69,6 +73,8 @@ func get_input_user_int(question_text:String = "") -> Int // Em tese, iria receb
 //
 //                 <<ATIVIDADES>>
 //
+
+
 //==========
 //Questão 01
 
@@ -176,8 +182,6 @@ func q_02(random_max_word_count:Int = 10, random_or_user:Bool = false) // Não t
     {
             class student
             {
-
-
                 var nome: String = ""; 
                 var notas:[Int] = [];
                 var MP_value: Int = 0;
@@ -203,9 +207,29 @@ func q_02(random_max_word_count:Int = 10, random_or_user:Bool = false) // Não t
 
         var list_student: [student]  = []
 
-        for i in 1..10 
+
+        if(user_or_random == false)
         {
-            list_student.append(   student(   marks: [get_input_random_int(_min:-1,_max:31), get_input_random_int(_min:-1,_max:31), get_input_random_int(_min:-1,_max:31)]   )   )
+            for i in 1...10 
+            {
+                list_student.append(   student(   
+                    marks: [get_input_random_int(_min:-1,_max:31), 
+                            get_input_random_int(_min:-1,_max:31), 
+                            get_input_random_int(_min:-1,_max:31)]
+                               )   )
+            }
+
+        }
+        else
+        {
+            for i in 1...10 
+            {
+                list_student.append(   student(
+                       marks: [get_input_user_int(question_text: "digite a primeira nota do aluno: "+String(i)),
+                              get_input_user_int(question_text: "digite a segunda nota do aluno: "+String(i)),
+                              get_input_user_int(question_text:"digite a terceira nota do aluno: "+String(i))]   
+                              )   )
+            }            
         }
 
         
@@ -255,7 +279,7 @@ func q_02(random_max_word_count:Int = 10, random_or_user:Bool = false) // Não t
 //==========
 //Questão 05
 func q_05(user_or_random:Bool = false)
-{
+{//start
     func get_input_random() -> Int {   return  Int.random(in: -1...51)   }
     func get_input_user() -> Int 
     {    
@@ -284,7 +308,7 @@ func q_05(user_or_random:Bool = false)
 
 
 
-}
+}//end
 //==========
 
 
