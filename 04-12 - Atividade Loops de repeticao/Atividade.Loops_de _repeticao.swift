@@ -49,9 +49,11 @@ Observações:
 //           <<LINHAS DE CODICO RECORRENTES>>
 //
 
+// Todas as questões usam essas funções
+
 import Foundation;
 
-func get_input_random_int(_min:Int, _max:Int) -> Int {   return  Int.random(in: _min..._max)   } // So para deixar claro que é uma input ficticia.
+func get_input_random_int(_min:Int, _max:Int) -> Int {   return  Int.random(in: _min..._max)   } // Só para deixar claro que é uma input ficticia.
 func get_input_user_int(question_text:String = "") -> Int // Em tese, iria receber input do usuario via o console; porem, não tive a oportunidade de testar.
 {    
     do
@@ -78,7 +80,6 @@ func get_input_user_int(question_text:String = "") -> Int // Em tese, iria receb
 //==========
 //Questão 01
 
-//usa: <<LINHAS DE CODICO RECORRENTES>>
 
 func q_01(random_or_user: Bool = false)
 {//Start
@@ -113,23 +114,8 @@ func q_01(random_or_user: Bool = false)
 //Questão 02
 
 
-func q_02(random_max_word_count:Int = 10, random_or_user:Bool = false) // Não tenho como testar esse codico em um console; sem o comando "readline" - a pausa no codico proporcionada por ele - se não haver um limite, o programa crasha.
+func q_02(random_max_word_count:Int = 10, random_or_user:Bool = false) // Não tenho como testar esse codico; se o comando"readline" for executado em um playground ele retorna nulo e - sem que o códico espere por uma input  - ele entra em um loop infinito, e crasha.
 {//start
-
-// func get_input_user() -> String {    var dummy:String = ""; print("digite a senha: "); if(readLine() != nil) {return dummy} else {return ""}    }
-
-    func get_input_random() -> String {   return String(  Int.random(in: 999999...10000000)  )   }
-    func get_input_user() -> String 
-    {    
-         var dummy:String? = "";
-         var dummy1:String = "";
-        print("Insira a senha: ");
-        dummy = readLine();
-        if(dummy == nil || dummy == "") {return ""} else {dummy1 = dummy as! String; return dummy1 }    
-    }
-
-
-
 
     var password_storage: [String] = []
     var novasenha:String = "11900989" 
@@ -140,7 +126,7 @@ func q_02(random_max_word_count:Int = 10, random_or_user:Bool = false) // Não t
     {   
 
 
-        if(random_or_user == false)   {dummy = get_input_random();} else {dummy = get_input_user();} 
+        if(random_or_user == false)   {dummy = String(get_input_random_int(_min:999999, _max:10000000));} else {dummy = String(   get_input_user_int(question_text: "insira a senha")   );} 
 
         password_storage.append(dummy);   
 
@@ -173,12 +159,10 @@ func q_02(random_max_word_count:Int = 10, random_or_user:Bool = false) // Não t
 
 
     //==========
-    //Questão 03 --ATUAL
-
-    //usa: <<LINHAS DE CODICO RECORRENTES>>
+    //Questão 03
 
 
-   func q_03(user_or_random:Bool = false)
+   func q_03(user_or_random:Bool = false) // Isso não era para ser tão dificil assim, era?
     {
             class student
             {
@@ -188,12 +172,13 @@ func q_02(random_max_word_count:Int = 10, random_or_user:Bool = false) // Não t
 
                 func MP()
                 {
-                    do
+                    do // Para caso de, por algum motivo, tenha menos que treis notas cadastradas em "Notas"
                     {
                     MP_value = notas[0]*2 + notas[1]*4 + notas[2]*3 / 10;
                     }
                     catch
                     {
+                        print("There is something possibly wrong with the marks storage")
                         return
                     }
 
@@ -207,7 +192,7 @@ func q_02(random_max_word_count:Int = 10, random_or_user:Bool = false) // Não t
 
         var list_student: [student]  = []
 
-
+        //SOLUÇÃO DA ATIVIDADE
         if(user_or_random == false)
         {
             for i in 1...10 
@@ -245,17 +230,6 @@ func q_02(random_max_word_count:Int = 10, random_or_user:Bool = false) // Não t
 
     func q_04(max_lengh:Int = 50, user_or_random:Bool = false)
     {//start
-        func get_input_random() -> Int {   return  Int.random(in: -1...51)   }
-        func get_input_user() -> Int 
-        {    
-             var dummy:String? = "";
-             var dummy1:Int = 0;
-
-            print("Insira o numero: ");
-            dummy = readLine();
-
-            if(dummy == nil || dummy == "") {return 0} else {dummy1 = dummy as! Int; return dummy1 }    
-        }
 
         var value_storage: [Int] = []
         var dummy:Int
@@ -263,13 +237,13 @@ func q_02(random_max_word_count:Int = 10, random_or_user:Bool = false) // Não t
 
         while(value_storage.count <= max_lengh)
         {
-            if(user_or_random==false) {dummy = get_input_random()} else {dummy = get_input_user()}
+            if(user_or_random==false) {dummy = get_input_random_int(_min:-1,_max:51)} else {dummy = get_input_user_int(question_text:"Insira o numero: ")}
             value_storage.append(dummy)
         }
 
         print(   value_storage.min()   )
 
-}//end
+    }//end
 
 
 //==========
@@ -278,24 +252,18 @@ func q_02(random_max_word_count:Int = 10, random_or_user:Bool = false) // Não t
 
 //==========
 //Questão 05
+
+
 func q_05(user_or_random:Bool = false)
 {//start
-    func get_input_random() -> Int {   return  Int.random(in: -1...51)   }
-    func get_input_user() -> Int 
-    {    
-         var dummy:String? = "";
-         var dummy1:Int = 0;
-        print("Insira o numero: ");
-        dummy = readLine();
-        if(dummy == nil || dummy == "") {return 0} else {dummy1 = dummy as! Int; return dummy1 }    
-    }
 
     var N:[Int] = []
 
 
     for n in 1...4 
     {
-        if(user_or_random==false){   N.append(get_input_random())   } else {   N.append(get_input_user())   }
+        if (user_or_random==false){   N.append(get_input_random_int(_min:-1,_max:51))   } 
+        else {   N.append(get_input_user_int(question_text:"Insira o numero"))   }
     }
 
 
@@ -306,8 +274,6 @@ func q_05(user_or_random:Bool = false)
 
     }
 
-
-
 }//end
 //==========
 
@@ -315,6 +281,7 @@ func q_05(user_or_random:Bool = false)
 
 //==========
 //Questão 06
+
 
 func q_06()
 {//start
@@ -324,7 +291,7 @@ func q_06()
     var dummy:Int = 93
     while(92...1478 ~= dummy)
     {
-        if (dummy%2==1) {   _Array.append(dummy);   }   // Não tenho certeza se esta linha está correta...
+        if (dummy%2==1) {   _Array.append(dummy);   }   // Não tenho certeza se a lógica está correta...
         dummy += 1;
     }
 
@@ -340,6 +307,7 @@ func q_06()
 
 //==========
 //Questão 07
+
 
 func q_07()
 {//start
