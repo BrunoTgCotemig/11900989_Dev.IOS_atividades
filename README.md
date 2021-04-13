@@ -1,7 +1,7 @@
 ## Sobre as Atividades
 
 
-* Para todas as atividades continas neste repositório: estarão localizadas dentro de pastas com, respectivamente, seu prazo de entrega e nome; serão constadas como uma "release" nova.
+* Para todas as atividades contidas neste repositório: estarão localizadas dentro de pastas com, respectivamente, seu prazo de entrega e nome; serão constadas como uma "release" nova.
 
 
 * <<{ Observação }>> --->
