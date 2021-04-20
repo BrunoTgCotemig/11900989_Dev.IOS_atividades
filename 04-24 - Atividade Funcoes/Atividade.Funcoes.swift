@@ -35,7 +35,8 @@ Bruno Teles Galvao;
 
 
 Observações:
-* Nenhuma 
+
+* Não tenho certeza se compreendi o enunciado das questões 5 e 6 corretamente.
 
 
 
@@ -133,8 +134,12 @@ func q_04()
 //==========
 //Questão 05
 
+//O que eu entendi:
+/*
+multiplicar os termos do array pela variavel "Times"
+*/
 
-// multiplicar os termos do array pela variavel "Times"
+
 func q_05() 
 {//start
     func print_IntArray(x: [Int] = []) {   print(""); for i in x {print(i, terminator: ", ")}   }
@@ -147,12 +152,12 @@ func q_05()
             for i in Array_I {   end_result.append( i * Times)   }
 
             // Para debug, segue a linha:
-            // print_IntArray(x: Array_I); print_IntArray(x: end_result);
+            // print("debug"); print_IntArray(x: Array_I); print_IntArray(x: end_result); print(" ");
 
             return end_result
         }
 
-    // Uma prova que ela funciona
+    // Uma prova que a função funciona
     var Array_II: [Int] = Activity(Times: 3, Array_I: [2, 3, 26, 37, 38, 48, 60, 62, 75, 78])
     print_IntArray(x: Array_II)
 
@@ -166,8 +171,14 @@ func q_05()
 //==========
 //Questão 06
 
+//O que eu entendi:
+/* 
+Uma função que recebe um array de "Int". Para cada número dentro dele,
+enquanto o resultado das divisóes for maior ou igual a 1, dividir o 
+numero por 2. Imprimir o resultado de cada divisão.
+*/
 
-// receber um array de "Int" e para cada número dentro fazer uma divisão por dois enquanto o resultado das divisóes for maior ou igual a 1 (Imprimir o resultado para cada execução)
+
 func q_06(   Numeros: [Int] = []   )
 {
     var dummy: Int = 0
