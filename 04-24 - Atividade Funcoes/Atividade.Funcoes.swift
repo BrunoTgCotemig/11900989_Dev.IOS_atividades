@@ -166,8 +166,26 @@ func q_05()
 //==========
 //Questão 06
 
-func q_06()
+
+// receber um array de "Int" e para cada número dentro fazer uma divisão por dois enquanto o resultado das divisóes for maior ou igual a 1 (Imprimir o resultado para cada execução)
+func q_06(   Numeros: [Int] = []   )
 {
+    var dummy: Int = 0
+
+    for i in Numeros 
+    {
+        print(" ")
+        print("Resultados do numero ["+String(i)+"]:")
+        
+        dummy = i
+        repeat
+        {
+            
+            dummy = dummy / 2; print(dummy, terminator: ", ")
+        }
+        while(dummy >= 1)
+
+    }
 
 
 }
